@@ -1,0 +1,261 @@
+:root {
+  --fonte: "Montserrat", "Krona One", "Open Sans", sans-serif;
+  --gradiente: linear-gradient(180deg, #e8f5c8 0%, rgb(255, 255, 255) 80%);
+  --gradiente-card: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(202, 212, 250, 0.3) 100%
+  );
+  --verde-claro: #e8f5c8;
+  --azul-escuro: #4e75ff;
+  --lilas-claro: #85a0ff;
+  --lilas: #cad4fa;
+  --lilas-escuro: #0c0421;
+  --cinza-claro: #efefef;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--fonte);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--fonte);
+}
+
+/* Header */
+
+.cabecalho {
+  background: var(--verde-claro);
+}
+
+.cabecalho .cabecalho__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 16px;
+  padding: 40px 16px;
+  white-space: nowrap;
+}
+
+.cabecalho__nav--logo {
+  width: 172px;
+  height: 56px;
+}
+
+.cabecalho__nav--lista {
+  font-size: 15px;
+}
+
+.cabecalho .cabecalho__nav .cabecalho__nav--line {
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.cabecalho .cabecalho__nav .cabecalho__nav--lista {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  gap: 40px;
+}
+
+.cabecalho .cabecalho__nav .cabecalho__nav--lista a {
+  color: #0c0421;
+  text-decoration: none;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 5px;
+}
+
+.cabecalho__lista-item {
+  display: flex;
+}
+
+.submenu li a:hover {
+  font-weight: 700 !important;
+}
+
+.cabecalho__lista-item .icone {
+  transition: transform 0.5s ease;
+  cursor: pointer;
+  color: var(--lilas-escuro);
+  font-size: 22px;
+  align-self: center;
+}
+
+.cabecalho__lista-item .icone.active {
+  transform: rotate(180deg);
+}
+
+.botao-acordeao.active .icone {
+  transform: rotate(180deg);
+}
+
+.cabecalho__nav--lista .submenu {
+  display: none;
+  position: absolute;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  padding: 16px;
+  border-top: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background: var(--cinza-claro);
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  min-width: 160px;
+  border-radius: 4px;
+  margin-top: 40px;
+  font-size: 22px;
+}
+
+.cabecalho__nav--lista .submenu .submenu {
+  left: 100%;
+  top: 10px;
+}
+
+.cabecalho__lista-item:hover > .submenu {
+  display: block;
+}
+.submenu li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  display: flex;
+  border-bottom: 2px solid #cad4fa;
+  margin: 8px 8px;
+  min-width: 170px;
+  height: 45px;
+}
+
+.submenu li:first-child {
+  margin-top: unset;
+}
+
+.submenu li:last-child {
+  margin-bottom: unset;
+  border-bottom: none;
+}
+
+@media screen and (min-width: 768px) {
+  /* Tablet */
+
+  .cabecalho__nav--logo {
+    width: 270px;
+    height: 88px;
+  }
+
+  .cabecalho__nav--lista {
+    font-size: 22px;
+    cursor: pointer;
+  }
+}
+
+/* Accordion */
+.acordeao {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* Estilo base do acordeão */
+.acordeao-item {
+  background-color: var(--azul-escuro);
+  color: white;
+  cursor: pointer;
+  border: none;
+  padding: 16px;
+  transition: background-color 0.5s ease;
+  border-radius: 32px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Estilo para quando o acordeão está fechado */
+.acordeao-item-fechado {
+  background-color: #007bff;
+}
+
+/* Estilo do botão que abre e fecha o item */
+.botao-acordeao {
+  width: 100%;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 700;
+  background: transparent;
+  line-height: 36px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.acordeao-item:hover {
+  background: var(--lilas-claro);
+  transition: 0.5s;
+}
+
+/* Estilo do conteúdo do acordeão */
+.conteudo-acordeao {
+  /* display: none; */
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  color: #000;
+  left: -16px;
+  bottom: -16px;
+  width: 110%;
+  background-color: var(--cinza-claro);
+  padding: 0 18px;
+  transition: max-height 0.5s ease;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+}
+
+/* Estilo para quando o acordeão está aberto */
+.acordeao-item-aberto .conteudo-acordeao {
+  display: block; /* Mostra o conteúdo */
+}
+
+.conteudo-acordeao p {
+  padding: 16px;
+  width: 95%;
+}
+
+/* Estilo para a transição do ícone */
+.icone {
+  float: right;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+  color: #fff;
+  font-size: 32px;
+}
+
+.botao-acordeao.active .icone {
+  transform: rotate(180deg);
+}
+
+/* Rodar o ícone quando o acordeão está aberto */
+.acordeao-item-aberto .icone {
+  transform: rotate(180deg);
+}
+
+.conteudo-acordeao.expandido {
+  max-height: 100px; /* Um valor suficientemente grande */
+  /* Outras propriedades necessárias para o estado expandido */
+}

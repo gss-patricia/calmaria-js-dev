@@ -1,0 +1,46 @@
+/* Seção cards*/
+.container__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 16px;
+    row-gap: 24px;
+  }
+  
+  .container .container__cards .container__cards--card {
+    background: var(--gradiente-card);
+    max-width: 648px;
+    height: auto;
+    padding: 24px 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    border-radius: 32px;
+    border: 1px solid #fff;
+  }
+  
+  .container__cards--card-title {
+    font-size: 26px;
+  }
+  
+  .container__cards--card-texto {
+    font-size: 15px;
+  }
+  
+  @media screen and (min-width: 1440px) {
+
+    .container .container__cards {
+      flex-direction: row;
+      column-gap: 24px;
+    }
+  
+    .container .container__cards .container__cards--card {
+      max-width: 384px;
+      height: 527px;
+      row-gap: 19px;
+      justify-content: center;
+    }
+}

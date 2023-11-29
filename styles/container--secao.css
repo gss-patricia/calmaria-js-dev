@@ -1,0 +1,100 @@
+/* SEGUNDA/TERCEIRA SEÇÃO */
+
+.container__secao {
+    margin: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container__secao .container__secao--conteudo {
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 56px;
+}
+
+.container__secao .container__secao--conteudo .container__secao--conteudo--img1 {
+    width: 328px;
+    height: 320px;
+}
+
+.container__secao .container__secao--conteudo .container__secao--conteudo--textos {
+    max-width: 587px;
+}
+
+.container__secao .container__secao--conteudo .container__secao--conteudo--textos .container__secao--conteudo--textos-titulo {
+    font-family: "Krona One", sans-serif;
+    font-size: 31px;
+    font-weight: 400;
+    color: var(--azul-escuro);
+}
+
+.container__secao .container__secao--conteudo .container__secao--conteudo--textos .container__secao--conteudo--textos-infos {
+    font-family: "Montserrat", sans-serif;
+    font-size: 22px;
+    color: #0C0421;
+    margin: 16px 0;
+}
+
+.container__secao .container__secao--conteudo .container__secao--conteudo--textos object {
+    width: 100%;
+}
+
+.container__secao .container__secao--conteudo .container__secao--conteudo--img2 {
+    width: 326px;
+    height: 330px;
+}
+
+.container__secao .container__secao--conteudo .container__secao--conteudo--img2:nth-child(2) {
+    padding-top: 16px;
+}
+
+@media screen and (min-width: 768px) {
+    /* Tablet */
+
+    .container__secao {
+        margin: 40px 60px;
+    }
+
+    .container__secao .container__secao--conteudo .container__secao--conteudo--img1 {
+        width: 648px;
+    }
+
+    .container__secao .container__secao--conteudo .container__secao--conteudo--img2 {
+        width: 312px;
+        height: 320px;
+    }
+
+    .container__secao .container__secao--conteudo .container__secao--conteudo--img2:nth-child(2) {
+        padding-top: 0;
+        padding-left: 24px;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+
+    .container__secao {
+      margin-left: 120px;
+      margin-right: 120px;
+    }
+  
+    .container__secao .container__secao--conteudo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      column-gap: 102px;
+    }
+  
+    .container__secao .container__secao--conteudo .container__secao--conteudo--img1 {
+      width: 508px;
+    }
+  
+    .container__secao .container__secao--conteudo .container__secao--conteudo--img2 {
+      width: 229px;
+      height: 320px;
+    }
+
+}

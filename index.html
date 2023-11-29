@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/container--primeiro.css" />
+    <link rel="stylesheet" href="./styles/container--secao.css" />
+    <link rel="stylesheet" href="./styles/container--cards.css" />
+    <link rel="stylesheet" href="./styles/container--inscricao.css" />
+    <link rel="stylesheet" href="./styles//container--contato.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/Desktop/Favicon.svg"
+      type="image/x-icon"
+    />
+    <title>Calmaria Spa</title>
+  </head>
+
+  <body>
+    <header class="cabecalho">
+      <nav class="cabecalho__nav">
+        <img
+          class="cabecalho__nav--logo"
+          src="./assets/logo.png"
+          alt="Logo da Calmaria Spa"
+        />
+        <span class="cabecalho__nav--line"></span>
+        <ul class="cabecalho__nav--lista" aria-label="Menu principal">
+          <li class="cabecalho__lista-item">
+            <a href="/">Inicio</a>
+          </li>
+          <li class="cabecalho__lista-item">
+            <!-- Adiciona aria-haspopup para indicar que este item tem um submenu -->
+            <!-- Adiciona aria-expanded para indicar se o submenu está aberto ou fechado -->
+            <a href="#" aria-haspopup="true" aria-expanded="false"
+              >Nosso espaço</a
+            >
+
+            <span class="material-symbols-outlined icone" aria-hidden="true"
+              >stat_minus_1</span
+            >
+            <!-- Submenu de primeiro nível -->
+            <ul class="submenu">
+              <li>
+                <a href="/quem-somos.html">Nossa história</a>
+              </li>
+              <li><a href="#">Localização</a></li>
+              <li><a href="#">Equipe</a></li>
+            </ul>
+          </li>
+          <li class="cabecalho__lista-item">
+            <a href="#">Serviços</a>
+          </li>
+          <li class="cabecalho__lista-item">
+            <a href="#contato">Contato</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container" aria-hidden="true">
+      <section class="container__primeiro">
+        <div class="container__primeiro--texto">
+          <h1>Boas-vindas ao seu refúgio de <span>paz e bem-estar</span></h1>
+          <button class="container__primeiro--texto-botao">
+            Quero relaxar
+          </button>
+        </div>
+        <img
+          class="container__primeiro--imagem"
+          src="./assets/home-image.png"
+          alt="Mulher recebendo massagem."
+        />
+      </section>
+
+      <section class="container__secao">
+        <div class="container__secao--conteudo">
+          <img
+            class="container__secao--conteudo--img1"
+            src="./assets/espaco-1.png"
+            alt="Ambiente da Calmaria Spa com plantas e teto solar redondo."
+          />
+          <div class="container__secao--conteudo--textos">
+            <h2 class="container__secao--conteudo--textos-titulo">
+              Tecnologia e natureza potencializando seu relaxamento
+            </h2>
+            <p class="container__secao--conteudo--textos-infos">
+              Oferecemos equipamentos de ponta, produtos certificados e uma
+              equipe de profissionais ultra qualificados para dissipar seu
+              estresse e ajudar você na busca por equilíbrio e tranquilidade.
+            </p>
+            <object
+              aria-hidden="true"
+              data="./assets/separador-direita.svg"
+              type="image/svg+xml"
+            ></object>
+          </div>
+        </div>
+        <div class="container__secao--conteudo">
+          <div class="container__secao--conteudo--textos">
+            <h2 class="container__secao--conteudo--textos-titulo">
+              Elevando seu bem-estar a um novo patamar
+            </h2>
+            <p class="container__secao--conteudo--textos-infos">
+              No Calmaria Spa cada visita é uma jornada revigorante para mais
+              serenidade e disposição! Independente da sua rotina, vamos ajudar
+              você a encontrar seu paraíso particular.
+            </p>
+            <object
+              aria-hidden="true"
+              data="./assets/separador-esquerda.svg"
+              type="image/svg+xml"
+            ></object>
+          </div>
+          <div>
+            <img
+              class="container__secao--conteudo--img2"
+              src="./assets/espaco-2.png"
+              alt="Mulher de costas em uma banheira segurando uma taça."
+            />
+            <img
+              class="container__secao--conteudo--img2"
+              src="./assets/espaco-3.png"
+              alt="Ambiente da Calmaria Spa com poltrona, plantas e uma piscina."
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="container container__cards">
+        <article class="container__cards--card">
+          <img
+            src="./assets/icon-massagem.png"
+            alt="Figura de pessoa deitada recebendo massagem de uma pessoa em pé."
+          />
+          <h2 class="container__cards--card-title">Massagens</h2>
+          <img src="./assets/Soft Star.png" alt="" />
+          <p class="container__cards--card-texto">
+            Relaxantes, terapêuticas, desportivas e drenagens. Conte com nossos
+            terapeutas especializados para aliviar suas tensões, tratar dores e
+            retenção de líquido através dessa técnica milenar tão eficiente para
+            o organismo humano.
+          </p>
+        </article>
+        <article class="container__cards--card">
+          <img
+            src="./assets/icon-tratamentos.png"
+            alt="Figura de banheira com uma flor"
+          />
+          <h2 class="container__cards--card-title">Tratamentos Corporais</h2>
+          <img src="./assets/Soft Star.png" alt="" />
+          <p class="container__cards--card-texto">
+            Tratamos sua pele com gentileza através de esfoliações corporais
+            suaves, hidratações profundas do corpo e do rosto, além de limpeza
+            facial. Você também pode desfrutar de banhos revigorantes de sais.
+          </p>
+        </article>
+        <article class="container__cards--card">
+          <img
+            src="./assets/icon-dias-especiais.png"
+            alt="Figura de mesa com vela, flor e produtos de Spa"
+          />
+          <h2 class="container__cards--card-title">Dias especiais</h2>
+          <img src="./assets/Soft Star.png" alt="" />
+          <p class="container__cards--card-texto">
+            Pacotes cuidadosamente elaborados, desde o "Dia Revitalizante" com
+            massagens e tratamentos faciais, até o "Dia Serenidade" com banhos
+            terapêuticos e meditação. Mime-se com momentos de refúgio de
+            tranquilidade.
+          </p>
+        </article>
+      </section>
+
+      <section class="container__incricao">
+        <img
+          class="container__incricao--mobile"
+          src="./assets/Mobile/Imagens/Mandala superior.svg"
+          alt=""
+        />
+        <img
+          class="container__incricao--tablet"
+          src="./assets/Tablet/Imagens/Mandala esquerda.svg"
+          alt=""
+        />
+        <div class="container__incricao--div">
+          <h4 class="container__incricao--form-titulo">
+            Inscreva-se para ganhar descontos!
+          </h4>
+          <p class="container__incricao--form-texto">
+            Cadastre seu email para receber descontos e novidades sobre o espaço
+            e nossos serviços.
+          </p>
+          <form class="container__incricao--form-input">
+            <input type="email" />
+            <button type="submit">Inscrever</button>
+          </form>
+        </div>
+        <img
+          class="container__incricao--mobile"
+          src="./assets/Mobile/Imagens/Mandala Inferior.svg"
+          alt=""
+        />
+        <img
+          class="container__incricao--tablet"
+          src="./assets/Tablet/Imagens/Mandala Direita.svg"
+          alt=""
+        />
+      </section>
+    </main>
+
+    <!-- JavaScript -->
+    <section id="contato" role="region" aria-label="Seção de Contato">
+      <div class="imgs-contato">
+        <img src="./assets/contato-img-1.png" alt="" />
+        <img src="./assets/contato-img-2.png" alt="" />
+        <img src="./assets/contato-img-3.png" alt="" />
+      </div>
+
+      <div class="textos">
+        <h2 class="titulo">Converse com a gente!</h2>
+        <p class="infos">
+          Reserve seu horário, tire dúvidas e proponha sugestões!
+        </p>
+        <button
+          class="btn-contato"
+          onclick="alternarModal('ver-modal', true)"
+          role="button"
+          aria-label="Clique para Entrar em contato"
+        >
+          Entrar em contato
+        </button>
+      </div>
+
+      <!-- Janela modal 'ver-modal' -->
+      <div
+        id="ver-modal"
+        class="modal"
+        role="dialog"
+        aria-labelledby="cabecalho-titulo-modal"
+        aria-modal="true"
+      >
+        <div class="conteudo-modal">
+          <div class="cabecalho-modal">
+            <h2 id="cabecalho-titulo-modal" class="cabecalho-titulo-modal">
+              Preencha seus dados:
+            </h2>
+            <!-- Botão para fechar a janela modal 'ver-modal' -->
+            <button
+              class="cabecalho-modal-fechar"
+              onclick="alternarModal('ver-modal', false)"
+              aria-label="Botão para fechar o formulário"
+              tabindex="0"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+
+          <div class="inputs-modal">
+            <p class="paragrafo-modal">
+              Quer marcar horário, enviar críticas ou sugestões? Preencha os
+              campos abaixo e deixe sua mensagem, que retornaremos em até 12h!
+            </p>
+
+            <label for="nome">Nome</label>
+            <input
+              type="text"
+              name="nome"
+              id="nome"
+              required
+              placeholder="Digite seu nome completo"
+              aria-describedby="instrucoes-nome"
+            />
+
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              placeholder="Digite seu e-mail"
+              aria-describedby="instrucoes-email"
+            />
+
+            <label for="telefone">Telefone</label>
+            <input
+              type="tel"
+              name="telefone"
+              id="telefone"
+              required
+              placeholder="(DDD) XXXXX-XXXX"
+              aria-describedby="instrucoes-telefone"
+            />
+
+            <label for="mensagem">Mensagem</label>
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              required
+              placeholder="Escreva sua mensagem"
+              aria-describedby="instrucoes-mensagem"
+            ></textarea>
+
+            <fieldset class="field-legend" aria-labelledby="tituloContato">
+              <legend>Prefere contato por:</legend>
+              <div class="inputs-modal-radio">
+                <div>
+                  <input
+                    id="ligacao"
+                    type="radio"
+                    name="contato"
+                    required
+                    value="Ligação"
+                    role="radio"
+                    aria-labelledby="ligacao-label"
+                  />
+                  <label
+                    class="inputs-modal-label"
+                    id="ligacao-label"
+                    for="ligacao"
+                    >Ligação</label
+                  >
+                </div>
+                <div>
+                  <input
+                    id="whatsapp"
+                    type="radio"
+                    name="contato"
+                    required
+                    value="Whatsapp"
+                    role="radio"
+                    aria-labelledby="whatsapp-label"
+                  />
+                  <label
+                    class="inputs-modal-label"
+                    id="whatsapp-label"
+                    for="whatsapp"
+                    >WhatsApp</label
+                  >
+                </div>
+                <div>
+                  <input
+                    id="email-contato"
+                    type="radio"
+                    name="contato"
+                    required
+                    value="Email"
+                    role="radio"
+                    aria-labelledby="email-contato-label"
+                  />
+                  <label
+                    class="inputs-modal-label"
+                    id="email-contato-label"
+                    for="email-contato"
+                    >Email</label
+                  >
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="rodape-modal">
+            <!-- Botão para fechar a janela modal 'ver-modal' -->
+            <button
+              class="btn-enviar"
+              onclick="fecharModal('ver-modal'), abrirModal('ver-modal-enviado')"
+              tabindex="0"
+            >
+              Enviar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal de formulário enviado -->
+      <div
+        id="ver-modal-enviado"
+        class="modal-enviado"
+        role="dialog"
+        aria-labelledby="cabecalho-titulo-modal-enviado"
+        aria-modal="true"
+      >
+        <div class="conteudo-modal-enviado">
+          <div class="cabecalho-modal-enviado">
+            <h1
+              id="cabecalho-titulo-modal-enviado"
+              class="cabecalho-titulo-modal-enviado"
+            >
+              Mensagem enviada com sucesso!
+            </h1>
+            <img
+              class="cabecalho-icone-modal-enviado"
+              src="./assets/icon-enviado.png"
+              alt=""
+            />
+            <!-- Botão para fechar a janela modal 'ver-modal-enviado' -->
+            <button
+              class="btn-fechar"
+              onclick="fecharModal('ver-modal-enviado')"
+              tabindex="0"
+              aria-label="Fechar formulário enviado"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal de popup inscrito -->
+      <div
+        id="ver-modal-inscrito"
+        class="modal-inscrito"
+        role="dialog"
+        aria-labelledby="cabecalho-titulo-modal-inscrito"
+        aria-modal="true"
+      >
+        <div class="conteudo-modal-inscrito">
+          <div class="cabecalho-modal-inscrito">
+            <h1
+              id="cabecalho-titulo-modal-inscrito"
+              class="cabecalho-titulo-modal-inscrito"
+            >
+              Inscrito com sucesso!
+            </h1>
+            <img
+              class="cabecalho-icone-modal-inscrito"
+              src="./assets/icon-enviado.png"
+              alt=""
+            />
+            <!-- Botão para fechar a janela modal 'ver-modal-inscrito' -->
+            <button
+              class="btn-fechar"
+              onclick="fecharModal('ver-modal-inscrito')"
+              tabindex="0"
+              aria-label="Fechar formulário de inscrição"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Acordeao -->
+
+      <div class="acordeao">
+        <div class="acordeao-item" id="item1">
+          <button class="botao-acordeao">
+            É necessário agendar com antecedência os tratamentos no spa?
+            <span class="material-symbols-outlined icone">
+              arrow_drop_down
+            </span>
+          </button>
+          <div class="conteudo-acordeao">
+            <p>
+              Recomendamos agendar com antecedência para garantir horário, mas
+              estamos abertos a atendimentos de última hora, sujeitos à
+              disponibilidade de agenda.
+            </p>
+          </div>
+        </div>
+        <div class="acordeao-item" id="item2">
+          <button class="botao-acordeao">
+            Crianças também são bem-vindas?
+            <span class="material-symbols-outlined icone">
+              arrow_drop_down
+            </span>
+          </button>
+          <div class="conteudo-acordeao">
+            <p>
+              Embora a maioria dos tratamentos seja projetada para adultos,
+              oferecemos opções adaptadas para crianças em alguns serviços.
+              Certifique-se de verificar nossa oferta específica para os
+              pequenos.
+            </p>
+          </div>
+        </div>
+        <div class="acordeao-item" id="item3">
+          <button class="botao-acordeao">
+            Qual é a política de cancelamento dos tratamentos no spa?
+            <span class="material-symbols-outlined icone">
+              arrow_drop_down
+            </span>
+          </button>
+          <div class="conteudo-acordeao">
+            <p>
+              Pedimos que nos avise com pelo menos 24 horas de antecedência para
+              cancelamentos. Isso nos permite ajustar nossa programação e
+              oferecer aos outros clientes a oportunidade de agendar nesse
+              horário.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer aria-hidden="true">
+      <small
+        >Desenvolvido por Alura. Projeto fictício sem fins comerciais.</small
+      >
+    </footer>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
