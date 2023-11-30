@@ -228,6 +228,7 @@ body {
   transition: max-height 0.5s ease;
   border-bottom-left-radius: 32px;
   border-bottom-right-radius: 32px;
+  z-index: 0;
 }
 
 .conteudo-acordeao div {
