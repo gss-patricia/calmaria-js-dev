@@ -54,11 +54,6 @@ function alternarModal(modalId, abrir) {
   document.body.style.overflow = abrir ? "hidden" : "auto";
 }
 
-function inscrever(event) {
-  event.preventDefault();
-  alternarModal("ver-modal-inscrito", true);
-}
-
 // Evento de tecla para fechar modais e submenu com ESC
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
@@ -74,22 +69,12 @@ document.addEventListener("keydown", (event) => {
 /**
  * Dropdown
  */
-function mostrarSubmenu(event) {
-  const menuItem = event.currentTarget.querySelector(
-    ".cabecalho__lista-item a"
-  );
-
-  const submenu = event.currentTarget.querySelector(".submenu");
-
-  const DropdownExpandedIcon = event.currentTarget.querySelector(
-    ".material-symbols-outlined.icone"
-  );
-
-  if (submenu) {
-    submenu.style.display = "block";
-    menuItem.setAttribute("aria-expanded", "true");
-    DropdownExpandedIcon.classList.add("active");
-  }
+function fecharSubmenuSeFocadoFora(submenu, item) {
+  submenu.addEventListener("focusout", function (event) {
+    if (!item.contains(event.relatedTarget)) {
+      alternarSubmenu(item, false);
+    }
+  });
 }
 
 // Função para alternar a visibilidade do submenu
@@ -116,16 +101,18 @@ function alternarSubmenu(item, mostrar) {
   }
 }
 
-// Adicionar eventos aos itens do menu
+// Adicionar eventos aos itens do menu de navegação no cabeçalho da página
 document.querySelectorAll(".cabecalho__lista-item").forEach((item) => {
   item.addEventListener("mouseover", () => alternarSubmenu(item, true));
   item.addEventListener("mouseout", () => alternarSubmenu(item, false));
 
-  // Para dispositivos com tela sensível ao toque ou para ação de clique
   item.addEventListener("click", () => {
-    const isDisplayed =
-      item.querySelector(".submenu").style.display === "block";
+    const submenu = item.querySelector(".submenu");
+    const isDisplayed = submenu.style.display === "block";
     alternarSubmenu(item, !isDisplayed);
+    if (isDisplayed) {
+      fecharSubmenuSeFocadoFora(submenu, item);
+    }
   });
 });
 
