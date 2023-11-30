@@ -133,28 +133,26 @@ document.querySelectorAll(".cabecalho__lista-item").forEach((item) => {
  * Accordion
  */
 document.querySelectorAll(".botao-acordeao").forEach((button) => {
-  button.addEventListener("click", () => {
-    const isAlreadyOpen = button.getAttribute("aria-expanded") === "true";
-
-    // Fecha todos os itens, atualiza aria-expanded e configura aria-hidden
-    document.querySelectorAll(".botao-acordeao").forEach((btn) => {
-      btn.setAttribute("aria-expanded", "false");
-      const content = btn.nextElementSibling;
-      content.classList.remove("expandido");
-
-      content.setAttribute("aria-hidden", "true");
-      content.querySelector("p").removeAttribute("tabindex");
-    });
-
-    // Se o item não estava aberto, abra-o e torne o conteúdo focável
-    if (!isAlreadyOpen) {
-      button.setAttribute("aria-expanded", "true");
-      const content = button.nextElementSibling;
-      content.classList.add("expandido");
-
-      // Torna o conteúdo visível para o litor de tela
-      content.setAttribute("aria-hidden", "false");
-      content.querySelector("p").setAttribute("tabindex", "0");
-    }
-  });
+  button.addEventListener("click", () => alternarAcordeao(button));
 });
+
+function alternarAcordeao(button) {
+  const isAlreadyOpen = button.getAttribute("aria-expanded") === "true";
+
+  document.querySelectorAll(".botao-acordeao").forEach((btn) => {
+    btn.setAttribute("aria-expanded", "false");
+
+    const content = btn.nextElementSibling;
+    content.classList.remove("expandido");
+    content.setAttribute("aria-hidden", "true");
+    content.querySelector("p").removeAttribute("tabindex");
+  });
+
+  if (!isAlreadyOpen) {
+    button.setAttribute("aria-expanded", "true");
+    const content = button.nextElementSibling;
+    content.classList.add("expandido");
+    content.setAttribute("aria-hidden", "false");
+    content.querySelector("p").setAttribute("tabindex", "0");
+  }
+}
