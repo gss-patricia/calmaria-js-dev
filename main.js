@@ -75,24 +75,6 @@ function mostrarSubmenu(event) {
   }
 }
 
-function esconderSubmenu(event) {
-  const submenu = event.currentTarget.querySelector(".submenu");
-
-  const menuItem = event.currentTarget.querySelector(
-    ".cabecalho__lista-item a"
-  );
-
-  const DropdownExpandedIcon = event.currentTarget.querySelector(
-    ".material-symbols-outlined.icone"
-  );
-
-  if (submenu) {
-    submenu.style.display = "none";
-    menuItem.setAttribute("aria-expanded", "false");
-    DropdownExpandedIcon.classList.remove("active");
-  }
-}
-
 // Função para alternar a visibilidade do submenu
 function alternarSubmenu(item, mostrar) {
   const submenu = item.querySelector(".submenu");
@@ -105,32 +87,18 @@ function alternarSubmenu(item, mostrar) {
     submenu.style.display = mostrar ? "block" : "none";
     menuItem.setAttribute("aria-expanded", mostrar ? "true" : "false");
     DropdownExpandedIcon.classList.toggle("active", mostrar);
+
+    if (mostrar) {
+      submenu.addEventListener("focusout", function (event) {
+        // Verifica se o novo elemento focado ainda está dentro do submenu ou do item do menu
+        if (!item.contains(event.relatedTarget)) {
+          alternarSubmenu(item, false);
+        }
+      });
+    }
   }
 }
 
-// Adicionar eventos aos itens do menu
-// document.querySelectorAll(".cabecalho__lista-item").forEach((item) => {
-//   item.addEventListener("mouseover", mostrarSubmenu);
-//   item.addEventListener("mouseout", esconderSubmenu);
-
-//   // Para dispositivos com tela sensível ao toque ou para ação de clique
-//   item.addEventListener("click", function (event) {
-//     const submenu = event.currentTarget.querySelector(".submenu");
-//     const DropdownExpandedIcon = event.currentTarget.querySelector(
-//       ".material-symbols-outlined.icone"
-//     );
-//     if (submenu) {
-//       const isDisplayed = submenu.style.display === "block";
-//       submenu.style.display = isDisplayed ? "none" : "block";
-
-//       if (isDisplayed) {
-//         DropdownExpandedIcon.classList.add("active");
-//       } else {
-//         DropdownExpandedIcon.classList.remove("active");
-//       }
-//     }
-//   });
-// });
 // Adicionar eventos aos itens do menu
 document.querySelectorAll(".cabecalho__lista-item").forEach((item) => {
   item.addEventListener("mouseover", () => alternarSubmenu(item, true));
@@ -149,25 +117,21 @@ document.querySelectorAll(".cabecalho__lista-item").forEach((item) => {
  */
 document.querySelectorAll(".botao-acordeao").forEach((button) => {
   button.addEventListener("click", () => {
-    const accordionContent = button.nextElementSibling;
+    const isAlreadyOpen = button.getAttribute("aria-expanded") === "true";
 
-    // Verifica se o conteúdo do acordeão já está aberto
-    const isAlreadyOpen = accordionContent.classList.contains("expandido");
-
-    // Fecha todos os itens
-    document.querySelectorAll(".conteudo-acordeao").forEach((element) => {
-      element.classList.remove("expandido");
-    });
-
-    // Remove 'active' de todos os botões
+    // Fecha todos os itens e atualiza aria-expanded
     document.querySelectorAll(".botao-acordeao").forEach((btn) => {
-      btn.classList.remove("active");
+      btn.setAttribute("aria-expanded", "false");
+      btn.nextElementSibling.classList.remove("expandido");
+      btn.nextElementSibling.querySelector("p").removeAttribute("tabindex");
     });
 
-    // Se o item não estava aberto, abra-o
+    // Se o item não estava aberto, abra-o e torne o conteúdo focável
     if (!isAlreadyOpen) {
-      button.classList.add("active");
-      accordionContent.classList.add("expandido");
+      button.setAttribute("aria-expanded", "true");
+      const content = button.nextElementSibling;
+      content.classList.add("expandido");
+      content.querySelector("p").setAttribute("tabindex", "0");
     }
   });
 });

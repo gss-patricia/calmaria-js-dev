@@ -23,6 +23,11 @@
 
 html {
   scroll-behavior: smooth;
+  *:focus {
+    outline: 2px solid var(--lilas-escuro);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
 }
 
 ul {
@@ -166,7 +171,9 @@ body {
   }
 }
 
-/* Accordion */
+/* 
+ * Accordion 
+ */
 .acordeao {
   width: 100%;
   margin-top: 40px;
@@ -183,16 +190,9 @@ body {
   transition: background-color 0.5s ease;
   border-radius: 32px;
   margin-bottom: 8px;
-  cursor: pointer;
   overflow: hidden;
 }
 
-/* Estilo para quando o acordeão está fechado */
-.acordeao-item-fechado {
-  background-color: #007bff;
-}
-
-/* Estilo do botão que abre e fecha o item */
 .botao-acordeao {
   width: 100%;
   text-align: left;
@@ -201,7 +201,10 @@ body {
   background: transparent;
   line-height: 36px;
   color: #fff;
+  align-items: center;
   border: none;
+  justify-content: space-between;
+  display: flex;
   cursor: pointer;
 }
 
@@ -212,7 +215,6 @@ body {
 
 /* Estilo do conteúdo do acordeão */
 .conteudo-acordeao {
-  /* display: none; */
   max-height: 0;
   overflow: hidden;
   position: relative;
@@ -227,35 +229,23 @@ body {
   border-bottom-right-radius: 32px;
 }
 
-/* Estilo para quando o acordeão está aberto */
-.acordeao-item-aberto .conteudo-acordeao {
-  display: block; /* Mostra o conteúdo */
-}
-
-.conteudo-acordeao p {
+.conteudo-acordeao div {
   padding: 16px;
   width: 95%;
 }
 
 /* Estilo para a transição do ícone */
 .icone {
-  float: right;
   transition: transform 0.5s ease;
   cursor: pointer;
-  color: #fff;
   font-size: 32px;
+  outline: none;
 }
 
-.botao-acordeao.active .icone {
-  transform: rotate(180deg);
-}
-
-/* Rodar o ícone quando o acordeão está aberto */
-.acordeao-item-aberto .icone {
+.botao-acordeao[aria-expanded="true"] .icone {
   transform: rotate(180deg);
 }
 
 .conteudo-acordeao.expandido {
-  max-height: 100px; /* Um valor suficientemente grande */
-  /* Outras propriedades necessárias para o estado expandido */
+  max-height: 100px;
 }
