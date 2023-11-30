@@ -37,8 +37,9 @@
 
 .container__incricao--form-input input {
   border: none;
+  outline: none;
   width: 65%;
-  margin-left: 2rem;
+  margin-left: 3.2rem;
   font-family: "Montserrat", sans-serif;
   font-size: 22px;
   color: #0c0421;

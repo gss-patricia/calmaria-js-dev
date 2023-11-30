@@ -28,26 +28,27 @@
 }
 
 .container__primeiro--texto-botao {
-  width: 318px;
-  height: 66px;
+  width: 31.8rem;
+  height: 6.6rem;
   color: white;
   border: none;
-  border-radius: 66px;
+  border-radius: 6.6rem;
   background: var(--azul-escuro);
-  font-size: 1.3rem;
-  cursor: pointer;
+  font-size: 2.4rem;
   font-family: "Montserrat";
+  font-weight: 700;
 }
 
 .container__primeiro--texto-botao:hover {
-  background: var(--lilas-claro);
+  background: var(--lilas-escuro);
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .container__primeiro--imagem {
   width: 297px;
   height: 384px;
-  align-self: end;
+  align-self: center;
 }
 
 @media screen and (min-width: 768px) {

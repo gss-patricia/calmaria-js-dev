@@ -26,28 +26,32 @@ function gerenciarFocoModal(modalId) {
   });
 }
 
-function inscrever() {
-  abrirModal("ver-modal-inscrito");
-}
-
 // Função para carregar e fechar a janela modal
 function alternarModal(modalId, abrir) {
   const modal = document.querySelector(`#${modalId}`);
+  console.log("modal", modal);
   modal.style.display = abrir ? "block" : "none";
 
   // Ocultar barra de rolagem
   document.body.style.overflow = abrir ? "hidden" : "auto";
 }
 
+function inscrever(event) {
+  event.preventDefault();
+  alternarModal("ver-modal-inscrito", true);
+}
+
 // Chamar essa função para cada modal que você deseja controlar o foco
 gerenciarFocoModal("ver-modal");
 gerenciarFocoModal("ver-modal-enviado");
+gerenciarFocoModal("ver-modal-inscrito");
 
 // Evento de tecla para fechar modais e submenu com ESC
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     alternarModal("ver-modal", false);
     alternarModal("ver-modal-enviado", false);
+    alternarModal("ver-modal-inscrito", false);
     document.querySelectorAll(".cabecalho__lista-item").forEach((item) => {
       alternarSubmenu(item, false);
     });
