@@ -172,21 +172,23 @@
       <p class="infos">
         Reserve seu horário, tire dúvidas e proponha sugestões!
       </p>
-      <button class="btn-contato" onclick="alternarModal('ver-modal', true)" aria-label="Clique para Entrar em contato">
+      <button class="btn-contato" onclick="alternarModal('ver-modal-contato', true)"
+        aria-label="Clique para Entrar em contato">
         Entrar em contato
       </button>
     </div>
 
     <!-- Modal -->
-    <!-- Janela modal 'ver-modal' -->
-    <section id="ver-modal" class="modal" role="dialog" aria-labelledby="cabecalho-titulo-modal" aria-modal="true">
+    <!-- Janela modal 'ver-modal-contato' -->
+    <section id="ver-modal-contato" class="modal" role="dialog" aria-labelledby="cabecalho-titulo-modal"
+      aria-modal="true">
       <div class="conteudo-modal">
         <div class="cabecalho-modal">
           <h2 id="cabecalho-titulo-modal" class="cabecalho-titulo-modal">
             Preencha seus dados:
           </h2>
-          <!-- Botão para fechar a janela modal 'ver-modal' -->
-          <button class="cabecalho-modal-fechar" onclick="alternarModal('ver-modal', false)"
+          <!-- Botão para fechar a janela modal 'ver-modal-contato' -->
+          <button class="cabecalho-modal-fechar" onclick="alternarModal('ver-modal-contato', false)"
             aria-label="Botão para fechar o formulário" tabindex="0">
             <span aria-hidden="true">×</span>
           </button>
@@ -237,9 +239,9 @@
         </div>
 
         <div class="rodape-modal">
-          <!-- Botão para fechar a janela modal 'ver-modal' -->
+          <!-- Botão para fechar a janela modal 'ver-modal-contato' -->
           <button class="btn-enviar"
-            onclick="alternarModal('ver-modal', false), alternarModal('ver-modal-enviado', true)" tabindex="0">
+            onclick="alternarModal('ver-modal-contato', false), alternarModal('ver-modal-enviado', true)" tabindex="0">
             Enviar
           </button>
         </div>
@@ -258,24 +260,6 @@
           <!-- Botão para fechar a janela modal 'ver-modal-enviado' contato-->
           <button class="btn-fechar" onclick="alternarModal('ver-modal-enviado', false)" tabindex="0"
             aria-label="Fechar formulário enviado">
-            Fechar
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Modal de popup inscrito -->
-    <section id="ver-modal-inscrito" class="modal-inscrito" role="dialog"
-      aria-labelledby="cabecalho-titulo-modal-inscrito" aria-modal="true">
-      <div class="conteudo-modal-inscrito">
-        <div class="cabecalho-modal-inscrito">
-          <h1 id="cabecalho-titulo-modal-inscrito" class="cabecalho-titulo-modal-inscrito">
-            Inscrito com sucesso!
-          </h1>
-          <img class="cabecalho-icone-modal-inscrito" src="./assets/icon-enviado.png" alt="" />
-          <!-- Botão para fechar a janela modal 'ver-modal-inscrito' -->
-          <button class="btn-fechar" onclick="alternarModal('ver-modal-inscrito', false)" tabindex="0"
-            aria-label="Fechar formulário de inscrição">
             Fechar
           </button>
         </div>
