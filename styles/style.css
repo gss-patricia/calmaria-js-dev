@@ -103,10 +103,6 @@ body {
   transform: rotate(180deg);
 }
 
-.botao-acordeao.active .icone {
-  transform: rotate(180deg);
-}
-
 .cabecalho__nav--lista .submenu {
   display: none;
   position: absolute;
