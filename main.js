@@ -69,35 +69,22 @@ document.addEventListener("keydown", (event) => {
 /**
  * Dropdown
  */
-function fecharSubmenuSeFocadoFora(submenu, item) {
-  submenu.addEventListener("focusout", function (event) {
-    if (!item.contains(event.relatedTarget)) {
-      alternarSubmenu(item, false);
-    }
-  });
-}
 
 // Função para alternar a visibilidade do submenu
 function alternarSubmenu(item, mostrar) {
   const submenu = item.querySelector(".submenu");
-  const menuItem = item.querySelector(".cabecalho__lista-item a");
-  const DropdownExpandedIcon = item.querySelector(
-    ".material-symbols-outlined.icone"
-  );
 
   if (submenu) {
     submenu.style.display = mostrar ? "block" : "none";
+    
+    const menuItem = item.querySelector(".cabecalho__lista-item a");
     menuItem.setAttribute("aria-expanded", mostrar ? "true" : "false");
+
+     const DropdownExpandedIcon = item.querySelector(
+    ".material-symbols-outlined.icone"
+  );
     DropdownExpandedIcon.classList.toggle("active", mostrar);
 
-    if (mostrar) {
-      submenu.addEventListener("focusout", function (event) {
-        // Verifica se o novo elemento focado ainda está dentro do submenu ou do item do menu
-        if (!item.contains(event.relatedTarget)) {
-          alternarSubmenu(item, false);
-        }
-      });
-    }
   }
 }
 
@@ -110,9 +97,6 @@ document.querySelectorAll(".cabecalho__lista-item").forEach((item) => {
     const submenu = item.querySelector(".submenu");
     const isDisplayed = submenu.style.display === "block";
     alternarSubmenu(item, !isDisplayed);
-    if (isDisplayed) {
-      fecharSubmenuSeFocadoFora(submenu, item);
-    }
   });
 });
 
