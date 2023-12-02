@@ -57,7 +57,7 @@ function alternarModal(modalId, abrir) {
 // Evento de tecla para fechar modais e submenu com ESC
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
-    alternarModal("ver-modal", false);
+    alternarModal("ver-modal-contato", false);
     alternarModal("ver-modal-enviado", false);
     alternarModal("ver-modal-inscrito", false);
     document.querySelectorAll(".cabecalho__lista-item").forEach((item) => {
