@@ -9,6 +9,8 @@ function gerenciarFocoModal(modalId) {
   const primeiroElemento = elementosModal[0];
   const ultimoElemento = elementosModal[elementosModal.length - 1];
 
+  primeiroElemento.focus();
+
   modal.addEventListener("keydown", (event) => {
     if (event.key === "Tab") {
       if (event.shiftKey) {
@@ -76,15 +78,14 @@ function alternarSubmenu(item, mostrar) {
 
   if (submenu) {
     submenu.style.display = mostrar ? "block" : "none";
-    
+
     const menuItem = item.querySelector(".cabecalho__lista-item a");
     menuItem.setAttribute("aria-expanded", mostrar ? "true" : "false");
 
-     const DropdownExpandedIcon = item.querySelector(
-    ".material-symbols-outlined.icone"
-  );
+    const DropdownExpandedIcon = item.querySelector(
+      ".material-symbols-outlined.icone"
+    );
     DropdownExpandedIcon.classList.toggle("active", mostrar);
-
   }
 }
 
