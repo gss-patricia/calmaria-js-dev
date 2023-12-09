@@ -129,6 +129,7 @@ body {
 .cabecalho__lista-item:hover > .submenu {
   display: block;
 }
+
 .submenu li {
   display: flex;
   justify-content: center;
